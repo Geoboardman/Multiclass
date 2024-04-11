@@ -1,0 +1,572 @@
+[
+    {
+        "name": "Camping Mastery",
+        "icon": "CampingMastery.png",
+        "description": "Reduces campfire setup time by 50% and increases the duration of the campfire by 30%",
+        "class": "ranger"
+    },
+    {
+        "name": "Chase",
+        "icon": "Perk Tracking.png",
+        "description": "Detect recent enemy footsteps. (Recent enemy player footsteps display as red footprints on the ground within 4.5 meters.) and can hear enemy footstep sounds from twice as far away.",
+        "class": "ranger"
+    },
+    {
+        "name": "Crippling Shot",
+        "icon": "Perk Crippling Shot.png",
+        "description": "Hitting the target's leg reduces their Move Speed Bonus by -40% for 1 seconds.",
+        "class": "ranger"
+    },
+    {
+        "name": "Crossbow Mastery",
+        "icon": "Perk Crossbow Mastery.png",
+        "description": "While using a crossbow, gain 5% Physical Power Bonus and an additional 50% Action Speed while reloading.",
+        "class": "ranger"
+    },
+    {
+        "name": "Kinesthesia",
+        "icon": "Perk Kinesthesia.png",
+        "description": "When moving with the bowstring drawn, move speed bonus increases by 10%.",
+        "class": "ranger"
+    },
+    {
+        "name": "Nimble Hands",
+        "icon": "Perk Nimble Hands.png",
+        "description": "When using a bow, increases your draw speed by 15%.",
+        "class": "ranger"
+    },
+    {
+        "name": "Quick Reload",
+        "icon": "Perk Quick Reload.png",
+        "description": "When reloading a bow-type weapon, gain 50% Action Speed.",
+        "class": "ranger"
+    },
+    {
+        "name": "Ranged Weapons Mastery",
+        "icon": "Perk Ranged Weapons Expert.png",
+        "description": "When attacking with a Ranged (bow/crossbow) weapon, gain 5% Physical Power Bonus.",
+        "class": "ranger"
+    },
+    {
+        "name": "Sharpshooter",
+        "icon": "Perk Sharpshooter.png",
+        "description": "When attacking with a Ranged (bow/crossbow) weapon, gain 15% Headshot Damage.",
+        "class": "ranger"
+    },
+    {
+        "name": "Spear Proficiency",
+        "icon": "Perk Spear Proficiency.png",
+        "description": "Gain the ability to equip spears. While using a spear, gain 7 Physical Power.",
+        "class": "ranger"
+    },
+    {
+        "name": "Trap Mastery",
+        "icon": "Perk Trap Expert.png",
+        "description": "Dramatically decreases installation time for traps. (+100% Regular Interaction Speed during installation)",
+        "class": "ranger"
+    },
+    {
+        "name": "Ambush",
+        "icon": "Perk Ambush.png",
+        "description": "The first attack within 3 seconds after exiting the Hide skill benefits from +50% increased Physical Power Bonus. Move Speed Bonus is increased by +10% for 3 seconds until the next action is performed when coming out of the Hide skill, excluding other sources of invisibility. If attack is successful the effect disappears.",
+        "class": "rogue"
+    },
+    {
+        "name": "Back Attack",
+        "icon": "Perk Backstab.png",
+        "description": "Increases Physical Power Bonus by +30% when attacking from behind a target.",
+        "class": "rogue"
+    },
+    {
+        "name": "Creep",
+        "icon": "Perk Creep.png",
+        "description": "When creeping (which activates after crouching for 0.5s with non-plated boots), movement speed is increased by an additional 30%.",
+        "class": "rogue"
+    },
+    {
+        "name": "Dagger Mastery",
+        "icon": "Perk Dagger Expert.png",
+        "description": "Increases Physical Power Bonus by +15% when attacking with a dagger.",
+        "class": "rogue"
+    },
+    {
+        "name": "Double Jump",
+        "icon": "Perk Double Jump.png",
+        "description": "Unlocks the ability to jump once while mid-air at the cost of -18 Move Speed.",
+        "class": "rogue"
+    },
+    {
+        "name": "Hide Mastery",
+        "icon": "Perk Hide Mastery.png",
+        "description": "Extends the total duration of the Hide skill to 40 seconds. (As Hide is a buff, its duration is affected by Starter Rogue's -30% buff duration)",
+        "class": "rogue"
+    },
+    {
+        "name": "Jokester",
+        "icon": "Jokester.png",
+        "description": "Grant all party members within 4.5 meters +2 All Attributes.",
+        "class": "rogue"
+    },
+    {
+        "name": "Pickpocket",
+        "icon": "Perk Pickpocket.png",
+        "description": "You can steal an enemy's item from the dungeon by using the 'interact' key. Bumps no longer break stealth. Items currently equipped by enemies cannot be stolen. Stolen item is random. Items worn in utility slots do not appear on the waist.",
+        "class": "rogue"
+    },
+    {
+        "name": "Poisoned Weapon",
+        "icon": "Perk Poisoned Weapon.png",
+        "description": "A successful attack applies poison that deals 4 Magical Damage over 4 seconds as Damage over Time. The poison can stack up to 5 times at once. (only works with daggers, crossbows, and swords)",
+        "class": "rogue"
+    },
+    {
+        "name": "Stealth",
+        "icon": "Perk Stealth.png",
+        "description": "When using the Hide skill, you can move 10 steps while crouching or slow walking without breaking invisibility.",
+        "class": "rogue"
+    },
+    {
+        "name": "Thrust",
+        "icon": "Perk Thrust.png",
+        "description": "Grants +20% increased Armor Penetration when swinging with Daggers.",
+        "class": "rogue"
+    },
+    {
+        "name": "Traps and Locks",
+        "icon": "Perk TrapsandLocks.png",
+        "description": "Highlights traps within 4.5 meters. Highlighted traps can be disarmed by the player. And gives the ability to pick locks without a lockpick.",
+        "class": "rogue"
+    },
+    {
+        "name": "Adrenaline Spike",
+        "icon": "Perk Adrenaline Spike.png",
+        "description": "When the Fighter's health reaches below 40%, they become flooded with adrenaline and gain additional +15% Action Speed for 12 seconds. Cooldown appears as a debuff: 60s.",
+        "class": "fighter"
+    },
+    {
+        "name": "Barricade",
+        "icon": "Perk Barricade.png",
+        "description": "Gain +50 additional Armor Rating and Magical Resistance during a block.",
+        "class": "fighter"
+    },
+    {
+        "name": "Combo Attack",
+        "icon": "Perk Combo Attack.png",
+        "description": "After landing two consecutive attacks within 2 seconds, gain +10% increased Physical Power Bonus for 2 seconds. (Needs 2 hits to initially proc and applies on the 3rd hit and beyond.)",
+        "class": "fighter"
+    },
+    {
+        "name": "Counterattack",
+        "icon": "Perk Counterattack.png",
+        "description": "Successfully blocking an attack grants +10% increased Move Speed Bonus and an additional +10% Action Speed for 3 seconds.",
+        "class": "fighter"
+    },
+    {
+        "name": "Defense Mastery",
+        "icon": "Perk Defense Expert.png",
+        "description": "Increases Armor Rating acquired from armor by 10%.",
+        "class": "fighter"
+    },
+    {
+        "name": "Dual Wield",
+        "icon": "Perk Dual Wield.png",
+        "description": "Equipping weapons in both hands grants additional flat +10% Action Speed. (works with all secondary weapons, excluding lanterns and shields)",
+        "class": "fighter"
+    },
+    {
+        "name": "Projectile Resistance",
+        "icon": "Perk Projectile Resistance.png",
+        "description": "Increases Projectile Damage Reduction by +10%.",
+        "class": "fighter"
+    },
+    {
+        "name": "Shield Expert",
+        "icon": "Perk Shield Expert.png",
+        "description": "Increases Move Speed Bonus by +10% during a block, if an attack is blocked successfully, gain 50% Action Speed for the next blocking or attacking action. (the timing window is very tight, you need to attack as quickly as possible after a blocked hit to make use of it)",
+        "class": "fighter"
+    },
+    {
+        "name": "Slayer",
+        "icon": "Perk Slayer.png",
+        "description": "Cannot equip plate armor, but gain +5 'Buff' Weapon Damage when holding a weapon in each hand. (works with all secondary weapons, excluding lanterns and shields)",
+        "class": "fighter"
+    },
+    {
+        "name": "Swift",
+        "icon": "Perk Swift.png",
+        "description": "Reduces the base movement speed penalty from equipped armor by -20%. Not applicable to additional speed modifiers.",
+        "class": "fighter"
+    },
+    {
+        "name": "Weapon Mastery",
+        "icon": "Perk Weapon Mastery.png",
+        "description": "All primary and secondary weapons are available regardless of class requirements. When using non-native weapons, Physical Power Bonus is decreased by -10%.",
+        "class": "fighter"
+    },
+    {
+        "name": "Sword Mastery",
+        "icon": "Perk Sword Mastery.png",
+        "description": "When using a Sword-type weapon, gain 2 Weapon Damage and 5% Action Speed. Also gain 10 Move Speed when taking a defensive stance with your sword.",
+        "class": "fighter"
+    },
+    {
+        "name": "Axe Specialization",
+        "icon": "Perk Axe Specialization.png",
+        "description": "Adds +5 Weapon damage to your Axe attacks.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Berserker",
+        "icon": "Perk Berserker.png",
+        "description": "The lower your remaining HP, the higher your physical power bonus, up to 33.33% at just above 0hp. The benefit is negatively affected by Health Bonus %, like Robust, War Cry, and Blood Exchange, which all add together. Physical Power Bonus = (1 - CurrentHealth/MaxHealth * (1 + HealthBonus%))/3. The bonus cannot be negative.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Carnage",
+        "icon": "Perk Carnage.png",
+        "description": "Armor Rating increases by 75 for 7 seconds when a target is killed.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Executioner",
+        "icon": "Perk Executioner.png",
+        "description": "Increases headshot Damage with Axes by an additive +10%.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Iron Will",
+        "icon": "Perk Iron Will.png",
+        "description": "Increases Magic Resist by 100 and ignores knockback effects.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Morale Boost",
+        "icon": "Perk Morale Boost.png",
+        "description": "Recovers 12% of Max Health after killing a player.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Potion Chugger",
+        "icon": "Perk Potion Chugger.png",
+        "description": "Alters all Potions to have 50% of their base duration and provide +20% of the effect. Note that base duration implies that the amount of effect received from the total duration is unchanged.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Savage",
+        "icon": "Perk Savage.png",
+        "description": "Physical Power Bonus increases by +10% when not wearing any chest armor.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Crush",
+        "icon": "Perk Smash.png",
+        "description": "Ability to destroy unreinforced doors and sturdy containers. Also increases the Impact Power of your two-handed attacks by 1 to better defeat blocks and parries.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Robust",
+        "icon": "Perk Toughness.png",
+        "description": "Increases Max Health Bonus by +15%.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Two-Hander",
+        "icon": "Perk Two Handed Weapon Expert.png",
+        "description": "Increases Physical Power Bonus by +5% when attacking with a two-handed weapon.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Treacherous Lungs",
+        "icon": "Perk Treacherous Lungs.png",
+        "description": "Increases base duration of all Shout skills (War Cry, Rage, Savage Roar) by +25%.",
+        "class": "barbarian"
+    },
+    {
+        "name": "Arcane Feedback",
+        "icon": "Perk Arcane Feedback.png",
+        "description": "Each time you do damage with an arcane spell your Spell Casting Speed and Magic Power Bonus increase by 2% per stack. Arcane Feedback can stack up to 5 times at once. The bonus duration lasts for 7 seconds and resets with each successful stack.",
+        "class": "wizard"
+    },
+    {
+        "name": "Arcane Mastery",
+        "icon": "Perk Arcane Mastery.png",
+        "description": "Increases Magic Power Bonus by +5% when using Arcane spells, and reduces the base casting time of Arcane spells by 0.5 seconds.",
+        "class": "wizard"
+    },
+    {
+        "name": "Fire Mastery",
+        "icon": "Perk Fire Mastery.png",
+        "description": "Increases Magic Power Bonus by +5% when using Fire spells, and increases the duration of the burn effect for Fireball, Ignite, and Zap by 2 seconds. The total damage of the burn remains the same. Additionally, the burn now applies 50% Heal Reduction",
+        "class": "wizard"
+    },
+    {
+        "name": "Ice Shield",
+        "icon": "Perk Ice Shield.png",
+        "description": "Grants +20 flat Armor Rating, and inflicts Frostbite on melee attackers for 0.5 seconds. Cooldown of 5 seconds in the form of a debuff. Frostbite inflicts -20% decreased Move Speed Bonus and -20% Action Speed.",
+        "class": "wizard"
+    },
+    {
+        "name": "Mana Surge",
+        "icon": "Perk Mana Surge.png",
+        "description": "Increases Magic Power Bonus by +10%.",
+        "class": "wizard"
+    },
+    {
+        "name": "Melt",
+        "icon": "Perk Melt.png",
+        "description": "If you deal magical fire damage to a target, the target's Physical Damage Reduction is reduced by a flat -10% for 5 seconds.",
+        "class": "wizard"
+    },
+    {
+        "name": "Quick Chant",
+        "icon": "Perk Quick Chant.png",
+        "description": "Increases Spell Casting Speed by +10%.",
+        "class": "wizard"
+    },
+    {
+        "name": "Reactive Shield",
+        "icon": "Perk Reactive Shield.png",
+        "description": "Activates an arcane reactive shield that lasts for 3 seconds when you take damage. The arcane shield can absorb 15 total damage, and can absorb both Physical and Magical Damage. The shield can only reactivate after a cooldown of 12s. The shield has 0% Scaling.",
+        "class": "wizard"
+    },
+    {
+        "name": "Sage",
+        "icon": "Perk Sage.png",
+        "description": "Increases Knowledge by +10%.",
+        "class": "wizard"
+    },
+    {
+        "name": "Spell Overload",
+        "icon": "Perk Spell Overload.png",
+        "description": "Reduces Memory Capacity Bonus % by 60% additively and increases all spell counts by 60%",
+        "class": "wizard"
+    },
+    {
+        "name": "Staff Mastery",
+        "icon": "Perk Staff Mastery.png",
+        "description": "When using a staff-type weapon, you gain 3 Magic Weapon Damage. (Magic Staff, Quarterstaff)",
+        "class": "wizard"
+    },
+    {
+        "name": "Ice Mastery",
+        "icon": "Perk Ice Mastery.png",
+        "description": "Dealing damage with ice magic freezes the target in place for 0.5 seconds.",
+        "class": "wizard"
+    },
+    {
+        "name": "Advanced Healer",
+        "icon": "Perk Advanced Healer.png",
+        "description": "Increases your Magical Healing stat by 5.",
+        "class": "cleric"
+    },
+    {
+        "name": "Blunt Weapon Mastery",
+        "icon": "Perk Blunt Weapon Mastery.png",
+        "description": "Increases Physical Power Bonus by +10% when attacking with a mace-type weapon.",
+        "class": "cleric"
+    },
+    {
+        "name": "Brewmaster",
+        "icon": "Perk Brewmaster.png",
+        "description": "You do not exhibit the detrimental drunk effects when you drink Ale and + 10 Strength.",
+        "class": "cleric"
+    },
+    {
+        "name": "Faithfulness",
+        "icon": "Perk Faithfulness.png",
+        "description": "Gain 15% divine magical damage bonus.",
+        "class": "cleric"
+    },
+    {
+        "name": "Holy Aura",
+        "icon": "Perk Holy Aura.png",
+        "description": "Increase the flat Armor Rating and Magic Resist Rating of yourself and all party members within 4.5 meters by +15.",
+        "class": "cleric"
+    },
+    {
+        "name": "Holy Water",
+        "icon": "Perk Holy Water.png",
+        "description": "Drinking will eliminate all removable curse effects.",
+        "class": "cleric"
+    },
+    {
+        "name": "Kindness",
+        "icon": "Perk Kindness.png",
+        "description": "Heal yourself for 15% of the spell's total heal amount when healing an ally.",
+        "class": "cleric"
+    },
+    {
+        "name": "Over Healing",
+        "icon": "Perk Over Healing.png",
+        "description": "Can Heal additional health up to 25% of Max Health, decays at 1% of Max Health per second.",
+        "class": "cleric"
+    },
+    {
+        "name": "Perseverance",
+        "icon": "Perk Perseverance.png",
+        "description": "Reduces all types of final incoming damage by 3 per tick, including each tick of Damage over Time and True damage, to a minimum of 1 damage.",
+        "class": "cleric"
+    },
+    {
+        "name": "Protection from Evil",
+        "icon": "Perk Protection from Evil.png",
+        "description": "Grants -50% Debuff Duration. (This effectively makes debuffs last less time.)",
+        "class": "cleric"
+    },
+    {
+        "name": "Requiem",
+        "icon": "Perk Requiem.png",
+        "description": "Resurrecting an ally revives them with 50% HP instead of a sliver of life. When reviving an ally at the Altar of Sacrifice, you do not need to sacrifice any of your own health.",
+        "class": "cleric"
+    },
+    {
+        "name": "Undead Slaying",
+        "icon": "Perk Undead Slaying.png",
+        "description": "Deal 20% increased physical damage against undead monsters. It is unknown if this is Physical Power Bonus or a final multiplier.",
+        "class": "cleric"
+    },
+    {
+        "name": "Charismatic Performance",
+        "icon": "Perk Charismatic Performance.png",
+        "description": "Upgrades a 'good' performance into a 'perfect' performance.",
+        "class": "bard"
+    },
+    {
+        "name": "Dancing Feet",
+        "icon": "Perk Dancing Feet.png",
+        "description": "Increases your flat Move Speed by +10 when holding an instrument.",
+        "class": "bard"
+    },
+    {
+        "name": "Fermata",
+        "icon": "Perk Fermata.png",
+        "description": "Gain 5 Resourcefulness",
+        "class": "bard"
+    },
+    {
+        "name": "Jolly Time",
+        "icon": "Perk Jolly Time.png",
+        "description": "Drinking Ale heals 5 HP and grants +10 flat Move Speed when drunk.",
+        "class": "bard"
+    },
+    {
+        "name": "Lore Mastery",
+        "icon": "Perk Lore Mastery.png",
+        "description": "A high level of understanding of objects increases Regular Interaction Speed and Magical Interaction Speed by an additional flat +25%.",
+        "class": "bard"
+    },
+    {
+        "name": "Melodic Protection",
+        "icon": "Perk Melodic Protection.png",
+        "description": "While playing, the caster's Physical Damage Reduction is increased by an additional flat +30%.",
+        "class": "bard"
+    },
+    {
+        "name": "Rapier Mastery",
+        "icon": "Perk Rapier Mastery.png",
+        "description": "When a rapier is equipped in either hand, 'Buff' Weapon Damage increases by +2 and Action Speed increases by an additional flat +5%.",
+        "class": "bard"
+    },
+    {
+        "name": "Reinforced Instruments",
+        "icon": "Perk Reinforced Instruments.png",
+        "description": "50% increased Physical Power Bonus when attacking with a musical instrument as a weapon. (This does not apply to Song playing)",
+        "class": "bard"
+    },
+    {
+        "name": "Story Teller",
+        "icon": "Perk Story Teller.png",
+        "description": "Give all party members within 4.5 meters +3 Will and Knowledge.",
+        "class": "bard"
+    },
+    {
+        "name": "Superior Dexterity",
+        "icon": "Perk Superior Dexterity.png",
+        "description": "50% faster switching time when switching between weapons/utility items.",
+        "class": "bard"
+    },
+    {
+        "name": "Wanderer's Luck",
+        "icon": "Perk Wanderers Luck.png",
+        "description": "Increases the chances of finding high-quality items when opening treasure chests. Increases Luck by a flat +50.",
+        "class": "bard"
+    },
+    {
+        "name": "War Song",
+        "icon": "Perk War Song.png",
+        "description": "If the performance is successful, increases 'Buff' Weapon Damage of yourself and allies within 4.5 meters by +3 for 6 seconds.",
+        "class": "bard"
+    },
+    {
+        "name": "Antimagic",
+        "icon": "Perk Antimagic.png",
+        "description": "Your magic damage reduction is increased additively by 25% against all elemental magic damage except divine magic and curse magic. Antimagic does not reduce damage of the following: Crystal Sword, Staff Mastery, Poison Weapons (these examples are dealing non-elemental/neutral magic damage).",
+        "class": "warlock"
+    },
+    {
+        "name": "Curse Mastery",
+        "icon": "Perk Curse Mastery.png",
+        "description": "Your curses (Curse of Pain, Curse of Weakness, and Power of Sacrifice) use a new status effect which are altered to have 30% longer base durations. 10.4s for Curse of Pain, 13s for Curse of Weakness, 15.6s for Power of Sacrifice. This allows a Curse without Curse Mastery to be active on a target at the same time as a Curse that uses Curse Mastery. Curse of Pain's total damage remains constant, lowering the damage per tick, but increasing the number of ticks. Power of Sacrifice's damage per tick, however, always remains the same, increasing the number of ticks and the total damage.",
+        "class": "warlock"
+    },
+    {
+        "name": "Dark Enhancement",
+        "icon": "Perk Dark Enhancement.png",
+        "description": "Grants +10% Magic Power Bonus for Dark Magic.",
+        "class": "warlock"
+    },
+    {
+        "name": "Dark Reflection",
+        "icon": "Perk Dark Reflection.png",
+        "description": "When you receive melee damage, reflect 10 dark magic Damage to the attacker. 15 seconds cooldown in the form of a debuff (now consumes Darkness Shards when activated.). 100% scaling.",
+        "class": "warlock"
+    },
+    {
+        "name": "Demon Armor",
+        "icon": "Perk Demon Armor.png",
+        "description": "Gain ability to wear plate armor at the cost of -10% Spell Casting Speed.",
+        "class": "warlock"
+    },
+    {
+        "name": "Infernal Pledge",
+        "icon": "Perk Infernal Pledge.png",
+        "description": "25% Damage Reduction from Undead and Demons",
+        "class": "warlock"
+    },
+    {
+        "name": "Immortal Lament",
+        "icon": "Perk Immortal Lament.png",
+        "description": "Casting spells will not take you below 1 health.",
+        "class": "warlock"
+    },
+    {
+        "name": "Malice",
+        "icon": "Perk Malice.png",
+        "description": "Will is increased by 10%.",
+        "class": "warlock"
+    },
+    {
+        "name": "Shadow Touch",
+        "icon": "Perk Shadow Touch.png",
+        "description": "2 true magic damage and 2 magical heal on melee hit. Affected by Vampirism. 0% Scaling",
+        "class": "warlock"
+    },
+    {
+        "name": "Soul Collector",
+        "icon": "Perk Soul Collector.png",
+        "description": "When dealing the final blow to an enemy, one darkness shard is collected. Each collected shard increases Magic Power Bonus for Dark Magic by 10%, up to a maximum of 10 stacks, lasting until and including the next Dark Magic spell/perk is casted. When a spell/perk consumes the effect, the entire spell/perk's damage is affected by the bonus.",
+        "class": "warlock"
+    },
+    {
+        "name": "Torture Mastery",
+        "icon": "Perk Torture Mastery.png",
+        "description": "When Curse of Pain or Power of Sacrifice are active on a target, any instance of Magical Damage Over Time from Curse of Pain or Power of Sacrifice dealt to the target will heal the Warlock for 2 Magical Healing. This healing is increased by the Magical Healing stat and the Warlock's Magic Power Bonus. This healing has 10% Attribute Bonus Ratio. Also doubles the health cost of spells.",
+        "class": "warlock"
+    },
+    {
+        "name": "Vampirism",
+        "icon": "Perk Vampirism.png",
+        "description": "Grants a 1.2x multiplier to all incoming Magical Healing. This multiplier is separate from Magic Power Bonus. Although Life Drain heals only based off of damage dealt, Vampirism does affect it. Unaffected by scaling.",
+        "class": "warlock"
+    }                    
+]
