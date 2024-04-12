@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import skillsData from './skills.json';
+import perksData from './perks.json';
 
 const SkillsAndPerks = () => {
     const [skills, setSkills] = useState([]);
@@ -10,19 +12,21 @@ const SkillsAndPerks = () => {
     const [filterType, setFilterType] = useState('both');  // 'both', 'skills', or 'perks'
     const [isDataLoaded, setIsDataLoaded] = useState(false);
 
+    useEffect(() => {
+        setSkills(skillsData);
+        setPerks(perksData);
+        setIsDataLoaded(true); // This line can be removed if isDataLoaded is not used elsewhere
+    }, []);
+    
+    useEffect(() => {
+        if (isDataLoaded) {
+            parseQueryParams();
+        }
+    }, [isDataLoaded]); // Add skills and perks as dependencies
 
-    const fetchSkillsAndPerks = () => {
-        console.log("fetchSkillsAndPerks")
-        return Promise.all([
-            fetch('/skills.json').then(response => response.json()),
-            fetch('/perks.json').then(response => response.json())
-        ]).then(([skillsData, perksData]) => {
-            setSkills(skillsData);
-            setPerks(perksData);
-        }).catch(error => {
-            console.error('Error fetching skills and perks:', error);
-        });
-    };
+    useEffect(() => {
+        updateURL(selectedSkills, selectedPerks);
+    }, [selectedSkills, selectedPerks]);
 
     const parseQueryParams = () => {
         console.log("parse query params")
@@ -36,22 +40,6 @@ const SkillsAndPerks = () => {
         setSelectedSkills(selectedSkillsFromURL);
         setSelectedPerks(selectedPerksFromURL);
     };
-
-    useEffect(() => {
-        fetchSkillsAndPerks().then(() => {
-            setIsDataLoaded(true); // Set flag after data is fetched
-        });
-    }, []);
-    
-    useEffect(() => {
-        if (isDataLoaded) {
-            parseQueryParams();
-        }
-    }, [isDataLoaded]); // Add skills and perks as dependencies
-
-    useEffect(() => {
-        updateURL(selectedSkills, selectedPerks);
-    }, [selectedSkills, selectedPerks]);
 
     const handleFilterClassChange = (e) => {
         setFilterClass(e.target.value);
@@ -84,6 +72,21 @@ const SkillsAndPerks = () => {
     const isPerkSelected = (perk) => {
         return selectedPerks.some(p => p.name === perk.name);
     }; 
+
+    const Item = ({ item, itemType, onClick }) => {
+        return (
+            <li className={`${itemType}-item`} onClick={onClick}>
+            <span className={`badge badge-${item.class}`}>{item.class}</span>
+            <strong>{item.name}:</strong> {item.description}
+            {item.cooldown && (
+                <>
+                <br />
+                <i>Cooldown: {item.cooldown}</i>
+                </>
+            )}
+            </li>
+        );
+    };
     
     const renderItems = (items, itemType) => {
         return items
@@ -94,6 +97,7 @@ const SkillsAndPerks = () => {
                     onClick={() => itemType === 'skills' ? handleSelectSkill(item) : handleSelectPerk(item)}
                     className={itemType === 'skills' ? 'skill-item' : 'perk-item'}>
                     <span className="item-type-badge">{itemType}</span>
+                    <span className={`badge badge-${item.class}`}>{item.class}</span>
                     <strong>{item.name}:</strong> {item.description}
                     {item.cooldown && (
                         <>
@@ -129,19 +133,23 @@ const SkillsAndPerks = () => {
                 <h2>Selected Skills ({selectedSkills.length}/2)</h2>
                 <ul>
                     {selectedSkills.map((skill, index) => (
-                        <li key={index} className="selectedItem" onClick={() => handleDeselectSkill(skill)}>
-                            <strong>{skill.name}</strong>: {skill.description}
-                            <br />
-                            <i>Cooldown: {skill.cooldown}</i>
-                        </li>
+                        <Item
+                        key={index}
+                        item={skill}
+                        itemType="skill"
+                        onClick={() => handleDeselectSkill(skill)}
+                        />
                     ))}
                 </ul>
                 <h2>Selected Perks ({selectedPerks.length}/4)</h2>
                 <ul>
                     {selectedPerks.map((perk, index) => (
-                        <li key={index} className="selectedItem" onClick={() => handleDeselectPerk(perk)}>
-                            <strong>{perk.name}</strong>: {perk.description}
-                        </li>
+                        <Item
+                        key={index}
+                        item={perk}
+                        itemType="perk"
+                        onClick={() => handleDeselectPerk(perk)}
+                        />
                     ))}
                 </ul>
             </div>
@@ -168,8 +176,24 @@ const SkillsAndPerks = () => {
 
                 {/* Filtered skills and perks */}
                 <h2>All Skills & Perks</h2>
-                <ul>{renderItems(skills, 'skills')}</ul>
-                <ul>{renderItems(perks, 'perks')}</ul>
+                <ul>
+                    {skills.map((skill, index) => (
+                        <Item
+                        key={index}
+                        item={skill}
+                        itemType="skill"
+                        onClick={() => handleSelectSkill(skill)}
+                        />
+                    ))}
+                    {perks.map((perk, index) => (
+                        <Item
+                        key={index}
+                        item={perk}
+                        itemType="perk"
+                        onClick={() => handleSelectPerk(perk)}
+                        />
+                    ))}
+            </ul>
             </div>
     </div>
     );

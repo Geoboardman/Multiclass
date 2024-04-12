@@ -1,25 +1,40 @@
-/* App.css */
+/* App.css  src:(process.env.PUBLIC_URL+"/images/image-name.jpg") */
 .container {
   display: flex;
   max-height: 100vh; /* Set the maximum height to viewport height */
+  background-image: url('./images/dungeonwall.webp');
+    color: white;
+    /* Assuming you want white text */
+    font-family: 'Your desired font', sans-serif;
 }
 
+/* This assumes a flex container, adjust as necessary */
 .side {
-  width: 50%;
-  padding: 10px; /* Adds padding inside each side */
+  flex: 1; /* Equal width */
+  margin-right: 20px; /* Space between the columns */
+  border: 1px solid #555;
+    /* Dark border for the boxes */
+    padding: 20px;
 }
 
+/* Last child doesn't need a right margin */
+.side:last-child {
+  margin-right: 0;
+}
+
+/* If you want a scrollbar for the list of all skills and perks */
 .scrollable {
-  overflow-y: auto; /* Enables vertical scrolling */
-  max-height: 100vh; /* Set the maximum height to viewport height */
+  overflow-y: auto;
 }
 
 .selectedItem {
-  background-color: #f0f0f0; /* Light grey background */
-  border: 1px solid #ddd;    /* Slight border for distinction */
-  padding: 5px;
-  margin: 5px 0;
-  border-radius: 5px;        /* Optional: rounded corners */
+  background-color: #444;
+  /* Darker background for contrast */
+  color: #ddd;
+  /* Light text color */
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: default;
 }
 
 .highlighted {
@@ -29,14 +44,49 @@
   margin: 5px 0;
 }
 
+/* Style for the dropdown */
+select {
+  background-color: #333;
+  /* Dark grey background */
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style-type: none;
+  /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
 ul {
-  padding-left: 20px; /* Adds space inside the list, to the left of list items */
-  list-style-type: none; /* Optional: removes bullet points */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Semi-transparent black */
+  padding: 10px;
+  border-radius: 8px;
 }
 
 li {
-  margin-bottom: 10px; /* Adds space below each list item */
-  line-height: 1.6; /* Increases space between lines of text */
+  background-color: transparent;
+  /* Clear any backgrounds */
+  color: #FAFAFA;
+  /* Light text color */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  /* Text shadow for readability */
+  margin-bottom: 5px;
+  /* Space out list items */
+}
+
+/* Style for options inside the dropdown - this might need browser-specific styles */
+option {
+  background: #333;
+  /* Same as select background for consistency */
+  color: white;
+  /* White text color */
 }
 
 h2 {
@@ -48,12 +98,23 @@ select {
   padding: 5px;
 }
 
-.skill-item {
-  background-color: #e0f0ff; /* Light blue for skills */
+/* Individual skill/perk item styling */
+.skill-item,
+.perk-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Slightly see-through white for items */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Smooth transition for hover effect */
 }
 
-.perk-item {
-  background-color: #e0ffe0; /* Light green for perks */
+.skill-item:hover,
+.perk-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Lighter on hover */
 }
 
 .item-type-badge {
@@ -63,4 +124,91 @@ select {
   background-color: #666666;
   border-radius: 5px;
   padding: 2px 6px;
+}
+
+/* General badge style */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-right: 10px;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+/* Class-specific badge styles */
+.badge-ranger {
+  background-color: #4e9a06;
+  /* Green */
+}
+
+.badge-rogue {
+  background-color: #cc0000;
+  /* Red */
+}
+
+.badge-fighter {
+  background-color: #2f78b4;
+  /* Blue */
+}
+
+.badge-barbarian {
+  background-color: #a40000;
+  /* Dark Red */
+}
+
+.badge-wizard {
+  background-color: #5c3566;
+  /* Purple */
+}
+
+.badge-cleric {
+  background-color: #c4a000;
+  /* Gold */
+}
+
+.badge-bard {
+  background-color: #ce5c00;
+  /* Orange */
+}
+
+.badge-warlock {
+  background-color: #204a87;
+  /* Dark Blue */
+}
+
+/* Any additional global styles you want to apply to match the font and color theme */
+body {
+  margin: 0;
+  font-family: 'Your desired font', sans-serif;
+  background-color: #222;
+  /* Assuming a dark theme overall */
+  color: white;
+}
+
+/* Add a semi-transparent overlay behind text */
+.text-background {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Adjust transparency as needed */
+  padding: 15px;
+  /* Or as needed */
+  margin: 15px 0;
+  /* Gives some space between text sections */
+  border-radius: 8px;
+  /* Optional, for rounded corners */
+}
+
+/* Style for text for better readability */
+.text-content {
+  color: #FAFAFA;
+  /* Off-white color for better visibility */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  /* Horizontal, vertical offset and blur radius */
+  font-weight: bold;
+  /* Or you could use a numeric value like 500 or 600 */
+  font-size: 1rem;
+  /* Or larger, depending on your design */
+  line-height: 1.6;
+  /* Or as needed for your text */
 }
