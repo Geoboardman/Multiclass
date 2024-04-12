@@ -13,16 +13,29 @@ const SkillsAndPerks = () => {
     const [isDataLoaded, setIsDataLoaded] = useState(false);
 
     useEffect(() => {
-        setSkills(skillsData);
-        setPerks(perksData);
-        setIsDataLoaded(true); // This line can be removed if isDataLoaded is not used elsewhere
+        const handlePopState = (event) => {
+            if (event.state) {
+                setSelectedSkills(event.state.selectedSkills);
+                setSelectedPerks(event.state.selectedPerks);
+            } else {
+                parseQueryParams();
+            }
+        };
+
+        window.addEventListener('popstate', handlePopState);
+
+        return () => window.removeEventListener('popstate', handlePopState);
     }, []);
     
     useEffect(() => {
-        if (isDataLoaded) {
+        if (!isDataLoaded) {
+            setSkills(skillsData);
+            setPerks(perksData);
+            setIsDataLoaded(true);
+        } else {
             parseQueryParams();
         }
-    }, [isDataLoaded]); // Add skills and perks as dependencies
+    }, [isDataLoaded]); // This will run after the data is loaded
 
     useEffect(() => {
         updateURL(selectedSkills, selectedPerks);
@@ -74,40 +87,45 @@ const SkillsAndPerks = () => {
     }; 
 
     const Item = ({ item, itemType, onClick }) => {
+        // Use the function passed via onClick prop for handling clicks
+        // Determine if the item is selected by checking if it's in the selectedSkills or selectedPerks
+        const isSelected = itemType === 'skills' ? isSkillSelected(item) : isPerkSelected(item);
+        // Use a different className for selected items to apply different styles if needed
+        const itemClass = isSelected ? `selected-${itemType}-item` : `${itemType}-item`;
+        
         return (
-            <li className={`${itemType}-item`} onClick={onClick}>
-            <span className={`badge badge-${item.class}`}>{item.class}</span>
-            <strong>{item.name}:</strong> {item.description}
-            {item.cooldown && (
-                <>
-                <br />
-                <i>Cooldown: {item.cooldown}</i>
-                </>
-            )}
+            <li className={itemClass} onClick={() => onClick(item)}>
+                <span className="item-type-badge">{itemType}</span>
+                <span className={`badge badge-${item.class}`}>{item.class}</span>
+                <strong>{item.name}:</strong> {item.description}
+                {item.cooldown && (
+                    <>
+                        <br />
+                        <i>Cooldown: {item.cooldown}</i>
+                    </>
+                )}
             </li>
         );
     };
     
     const renderItems = (items, itemType) => {
+        // Define the click handler based on the item type
+        const handleClick = itemType === 'skills' ? handleSelectSkill : handleSelectPerk;
+
+        // Filter and map over the items, creating an Item component for each
         return items
             .filter(item => filterClass === 'all' || item.class === filterClass)
-            .filter(item => filterType === 'both' || (filterType === 'skills' && item.cooldown) || (filterType === 'perks' && !item.cooldown))
-            .map((item, index) => (
-                <li key={index} 
-                    onClick={() => itemType === 'skills' ? handleSelectSkill(item) : handleSelectPerk(item)}
-                    className={itemType === 'skills' ? 'skill-item' : 'perk-item'}>
-                    <span className="item-type-badge">{itemType}</span>
-                    <span className={`badge badge-${item.class}`}>{item.class}</span>
-                    <strong>{item.name}:</strong> {item.description}
-                    {item.cooldown && (
-                        <>
-                            <br />
-                            <i>Cooldown: {item.cooldown}</i>
-                        </>
-                    )}
-                </li>
+            .filter(item => filterType === 'both' || (filterType === itemType && item.cooldown) || (filterType === 'perks' && !item.cooldown))
+            .map(item => (
+                <Item
+                    key={item.name} // Assuming name is unique, otherwise use a combination or an ID
+                    item={item}
+                    itemType={itemType}
+                    onClick={handleClick}
+                />
             ));
     };
+
 
     const handleDeselectSkill = (skill) => {
         setSelectedSkills(selectedSkills.filter(s => s !== skill));
@@ -118,15 +136,13 @@ const SkillsAndPerks = () => {
     };
 
     const updateURL = (selectedSkills, selectedPerks) => {
-        console.log("update url")
         const skillNames = selectedSkills.map(skill => encodeURIComponent(skill.name)).join(',');
         const perkNames = selectedPerks.map(perk => encodeURIComponent(perk.name)).join(',');
-    
+
         const newURL = `${window.location.pathname}?skills=${skillNames}&perks=${perkNames}`;
-        window.history.pushState({}, '', newURL);
+        window.history.pushState({ selectedSkills, selectedPerks }, '', newURL);
     };
     
-
     return (    
         <div className="container">
             <div className="side">
@@ -136,7 +152,7 @@ const SkillsAndPerks = () => {
                         <Item
                         key={index}
                         item={skill}
-                        itemType="skill"
+                        itemType="skills"
                         onClick={() => handleDeselectSkill(skill)}
                         />
                     ))}
@@ -147,7 +163,7 @@ const SkillsAndPerks = () => {
                         <Item
                         key={index}
                         item={perk}
-                        itemType="perk"
+                        itemType="perks"
                         onClick={() => handleDeselectPerk(perk)}
                         />
                     ))}
@@ -177,22 +193,8 @@ const SkillsAndPerks = () => {
                 {/* Filtered skills and perks */}
                 <h2>All Skills & Perks</h2>
                 <ul>
-                    {skills.map((skill, index) => (
-                        <Item
-                        key={index}
-                        item={skill}
-                        itemType="skill"
-                        onClick={() => handleSelectSkill(skill)}
-                        />
-                    ))}
-                    {perks.map((perk, index) => (
-                        <Item
-                        key={index}
-                        item={perk}
-                        itemType="perk"
-                        onClick={() => handleSelectPerk(perk)}
-                        />
-                    ))}
+                    {renderItems(skills, 'skills')}
+                    {renderItems(perks, 'perks')}
             </ul>
             </div>
     </div>
