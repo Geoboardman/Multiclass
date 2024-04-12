@@ -11,7 +11,8 @@ const SkillsAndPerks = () => {
     const [filterClass, setFilterClass] = useState('all'); // 'all', 'ranger', or 'rogue'
     const [filterType, setFilterType] = useState('both');  // 'both', 'skills', or 'perks'
     const [isDataLoaded, setIsDataLoaded] = useState(false);
-
+     
+    /*
     useEffect(() => {
         const handlePopState = (event) => {
             if (event.state) {
@@ -26,16 +27,20 @@ const SkillsAndPerks = () => {
 
         return () => window.removeEventListener('popstate', handlePopState);
     }, []);
-    
+    */
     useEffect(() => {
-        if (!isDataLoaded) {
-            setSkills(skillsData);
-            setPerks(perksData);
-            setIsDataLoaded(true);
-        } else {
+        setSkills(skillsData);
+        setPerks(perksData);
+        setIsDataLoaded(true);
+    }, []);
+
+/*
+    useEffect(() => {
+        if (isDataLoaded) {
             parseQueryParams();
         }
     }, [isDataLoaded]); // This will run after the data is loaded
+*/
 
     useEffect(() => {
         updateURL(selectedSkills, selectedPerks);
