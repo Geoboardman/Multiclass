@@ -12,49 +12,31 @@ const SkillsAndPerks = () => {
     const [filterType, setFilterType] = useState('both');  // 'both', 'skills', or 'perks'
     const [isDataLoaded, setIsDataLoaded] = useState(false);
      
-    /*
-    useEffect(() => {
-        const handlePopState = (event) => {
-            if (event.state) {
-                setSelectedSkills(event.state.selectedSkills);
-                setSelectedPerks(event.state.selectedPerks);
-            } else {
-                parseQueryParams();
-            }
-        };
-
-        window.addEventListener('popstate', handlePopState);
-
-        return () => window.removeEventListener('popstate', handlePopState);
-    }, []);
-    */
     useEffect(() => {
         setSkills(skillsData);
         setPerks(perksData);
         setIsDataLoaded(true);
     }, []);
 
-/*
-    useEffect(() => {
-        if (isDataLoaded) {
-            parseQueryParams();
-        }
-    }, [isDataLoaded]); // This will run after the data is loaded
-*/
 
     useEffect(() => {
-        updateURL(selectedSkills, selectedPerks);
+        parseQueryParams();
+    }, [isDataLoaded]); // This will run after the data is loaded
+
+
+    useEffect(() => {
+        if(isDataLoaded)
+        {
+            updateURL(selectedSkills, selectedPerks);
+        }
     }, [selectedSkills, selectedPerks]);
 
     const parseQueryParams = () => {
-        console.log("parse query params")
         const params = new URLSearchParams(window.location.search);
         const skillsFromURL = params.get('skills')?.split(',').map(decodeURIComponent) || [];
         const perksFromURL = params.get('perks')?.split(',').map(decodeURIComponent) || [];
-    
         const selectedSkillsFromURL = skills.filter(skill => skillsFromURL.includes(skill.name));
         const selectedPerksFromURL = perks.filter(perk => perksFromURL.includes(perk.name));
-    
         setSelectedSkills(selectedSkillsFromURL);
         setSelectedPerks(selectedPerksFromURL);
     };
