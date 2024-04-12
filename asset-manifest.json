@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Multiclass/static/css/main.8498beaa.css",
-    "main.js": "/Multiclass/static/js/main.2ca79164.js",
+    "main.js": "/Multiclass/static/js/main.6b4477a1.js",
     "static/js/453.4fc50440.chunk.js": "/Multiclass/static/js/453.4fc50440.chunk.js",
     "static/media/dungeonwall.webp": "/Multiclass/static/media/dungeonwall.150bf89b62531bb86605.webp",
     "index.html": "/Multiclass/index.html",
     "main.8498beaa.css.map": "/Multiclass/static/css/main.8498beaa.css.map",
-    "main.2ca79164.js.map": "/Multiclass/static/js/main.2ca79164.js.map",
+    "main.6b4477a1.js.map": "/Multiclass/static/js/main.6b4477a1.js.map",
     "453.4fc50440.chunk.js.map": "/Multiclass/static/js/453.4fc50440.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8498beaa.css",
-    "static/js/main.2ca79164.js"
+    "static/js/main.6b4477a1.js"
   ]
 }
