@@ -55,6 +55,9 @@ select {
   cursor: pointer;
 }
 
+ul,li{
+  list-style: none;
+}
 
 ul {
   background-color: rgba(0, 0, 0, 0.6);
