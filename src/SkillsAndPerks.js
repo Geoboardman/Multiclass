@@ -8,7 +8,7 @@ const SkillsAndPerks = () => {
     const [perks, setPerks] = useState([]);
     const [selectedSkills, setSelectedSkills] = useState([]);
     const [selectedPerks, setSelectedPerks] = useState([]);
-    const [filterClass, setFilterClass] = useState('all'); // 'all', 'ranger', or 'rogue'
+    const [filterClass, setFilterClass] = useState([]); // Initialize as an empty array
     const [filterType, setFilterType] = useState('both');  // 'both', 'skills', or 'perks'
     const [isDataLoaded, setIsDataLoaded] = useState(false);
      
@@ -41,9 +41,11 @@ const SkillsAndPerks = () => {
         setSelectedPerks(selectedPerksFromURL);
     };
 
-    const handleFilterClassChange = (e) => {
-        setFilterClass(e.target.value);
-    };
+const handleFilterClassChange = (e) => {
+    // Array.from maps the selectedOptions to their values
+    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+    setFilterClass(selectedOptions);
+};
     
     const handleFilterTypeChange = (e) => {
         setFilterType(e.target.value);
@@ -73,24 +75,34 @@ const SkillsAndPerks = () => {
         return selectedPerks.some(p => p.name === perk.name);
     }; 
 
-    const Item = ({ item, itemType, onClick }) => {
-        // Use the function passed via onClick prop for handling clicks
-        // Determine if the item is selected by checking if it's in the selectedSkills or selectedPerks
+    const Item = ({ item, itemType, onClick, onRemove }) => {
         const isSelected = itemType === 'skills' ? isSkillSelected(item) : isPerkSelected(item);
-        // Use a different className for selected items to apply different styles if needed
         const itemClass = isSelected ? `selected-${itemType}-item` : `${itemType}-item`;
-        
+
         return (
-            <li className={itemClass} onClick={() => onClick(item)}>
-                <span className="item-type-badge">{itemType}</span>
-                <span className={`badge badge-${item.class}`}>{item.class}</span>
-                <strong>{item.name}:</strong> {item.description}
-                {item.cooldown && (
-                    <>
-                        <br />
-                        <i>Cooldown: {item.cooldown}</i>
-                    </>
+            <li className={itemClass}>
+                {/* Render the "X" button only for selected items */}
+                {isSelected && (
+                    <button 
+                        onClick={(e) => { 
+                            e.stopPropagation(); // Prevent the item click handler from firing
+                            onRemove(item);
+                        }}
+                        style={{ float: 'right', cursor: 'pointer' }}>
+                        X
+                    </button>
                 )}
+                {/* The rest of the item content */}
+                <span onClick={() => onClick(item)} style={{ cursor: 'pointer' }}>
+                    <span className={`badge badge-${item.class}`}>{item.class}</span>
+                    <strong>{item.name}:</strong> {item.description}
+                    {item.cooldown && (
+                        <>
+                            <br />
+                            <i>Cooldown: {item.cooldown}</i>
+                        </>
+                    )}
+                </span>
             </li>
         );
     };
@@ -101,16 +113,16 @@ const SkillsAndPerks = () => {
 
         // Filter and map over the items, creating an Item component for each
         return items
-            .filter(item => filterClass === 'all' || item.class === filterClass)
-            .filter(item => filterType === 'both' || (filterType === itemType && item.cooldown) || (filterType === 'perks' && !item.cooldown))
-            .map(item => (
-                <Item
-                    key={item.name} // Assuming name is unique, otherwise use a combination or an ID
-                    item={item}
-                    itemType={itemType}
-                    onClick={handleClick}
-                />
-            ));
+                .filter(item => filterClass.includes('all') || filterClass.some(cls => item.class === cls))
+                .filter(item => filterType === 'both' || (filterType === itemType && item.cooldown) || (filterType === 'perks' && !item.cooldown))
+                .map(item => (
+                    <Item
+                        key={item.name}
+                        item={item}
+                        itemType={itemType}
+                        onClick={handleClick}
+                    />
+                ));
     };
 
 
@@ -137,10 +149,11 @@ const SkillsAndPerks = () => {
                 <ul>
                     {selectedSkills.map((skill, index) => (
                         <Item
-                        key={index}
-                        item={skill}
-                        itemType="skills"
-                        onClick={() => handleDeselectSkill(skill)}
+                            key={index}
+                            item={skill}
+                            itemType="skills"
+                            onClick={() => {}} // No need to handle onClick here if it's only for deselect
+                            onRemove={handleDeselectSkill}
                         />
                     ))}
                 </ul>
@@ -148,10 +161,11 @@ const SkillsAndPerks = () => {
                 <ul>
                     {selectedPerks.map((perk, index) => (
                         <Item
-                        key={index}
-                        item={perk}
-                        itemType="perks"
-                        onClick={() => handleDeselectPerk(perk)}
+                            key={index}
+                            item={perk}
+                            itemType="perks"
+                            onClick={() => {}} // No need to handle onClick here if it's only for deselect
+                            onRemove={handleDeselectPerk}
                         />
                     ))}
                 </ul>
@@ -159,7 +173,7 @@ const SkillsAndPerks = () => {
             <div className="side scrollable">
                 {/* Filter controls */}
                 <div>
-                    <select onChange={handleFilterClassChange}>
+                    <select multiple onChange={handleFilterClassChange} value={filterClass}>
                         <option value="all">All Classes</option>
                         <option value="ranger">Ranger</option>
                         <option value="rogue">Rogue</option>
